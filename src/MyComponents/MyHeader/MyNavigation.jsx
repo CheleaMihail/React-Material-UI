@@ -2,7 +2,9 @@ import React from 'react';
 import { AppBar, Button, Container, IconButton, Toolbar, Typography, Box, DialogContent, DialogContentText, TextField } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core';
-import { Dialog, DialogTitle } from '@mui/material';
+import { Dialog, DialogActions, DialogTitle } from '@mui/material';
+import { useState } from 'react';
+
 const useStyles = makeStyles((theme) =>({
   root:{
     flexGrow: 1
@@ -14,8 +16,16 @@ const useStyles = makeStyles((theme) =>({
     flexGrow:1
   }
   }))
+
 const MyNavigation = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const handleClickOpen = () =>{
+    setOpen(true);
+  }
+  const handleClose = () =>{
+    setOpen(false);
+  }
     return (
 <AppBar position="fixed">
 <Container fixed>
@@ -36,8 +46,21 @@ const MyNavigation = () => {
    id="name"
    label="Email Adress"
    type="email"
+   fullWidth
+   /> 
+    <TextField
+   autoFocus
+   margin="dense"
+   id="pass"
+   label="Password"
+   type="password"
+   fullWidth
    /> 
  </DialogContent>
+ <DialogActions>
+   <Button onClick={handleClose} color="primary">Cancel</Button>
+   <Button onClick={handleClose} color="primary">Log in</Button>
+ </DialogActions>
  </Dialog>
   </Box>
   <Button color="secondary" variant="contained">Sign up</Button>
