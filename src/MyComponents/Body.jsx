@@ -1,10 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import { Container, Paper, Typography, Grid, Button, Card, CardMedia, CardContent, CardActions } from '@material-ui/core';
+import { Container, Typography, Grid, Button, Card, CardMedia, CardContent, CardActions } from '@material-ui/core';
 import LayerIcon from '@material-ui/icons/Layers';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 const useStyles = makeStyles((theme) =>({
-
     root:{
       flexGrow: 1
     },
